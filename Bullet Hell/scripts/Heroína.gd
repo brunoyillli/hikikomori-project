@@ -4,7 +4,6 @@ var pos = Vector2()
 onready var bullets = load("res://bullets.tscn")
 var tiroespera
 
-
 func get_input():
 	pos = Vector2()
 
@@ -30,11 +29,11 @@ func get_input():
 func _bullet_spawn():
 	if tiroespera == true:
 		var bullets1 = bullets.instance()
+		print('ddff')
 		add_child(bullets1)
-		print("bulets")
 		tiroespera = false
-		
 
+		
 
 func _physics_process(delta):
 	get_input()
@@ -47,3 +46,4 @@ func _ready():
 
 func _on_Timer_timeout():
 	tiroespera = true
+

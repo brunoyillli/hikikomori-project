@@ -1,0 +1,114 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://omnibaixo.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Sem título.png" type="Texture" id=2]
+[ext_resource path="res://omnicima.gd" type="Script" id=3]
+[ext_resource path="res://omniesquerda.gd" type="Script" id=4]
+[ext_resource path="res://omnidireita.gd" type="Script" id=5]
+[ext_resource path="res://omnidireitabaixo1.gd" type="Script" id=6]
+[ext_resource path="res://omnidireitabaixo2.gd" type="Script" id=7]
+[ext_resource path="res://omnidiretabaixo3.gd" type="Script" id=8]
+[ext_resource path="res://omnidiretabaixo4.gd" type="Script" id=9]
+[ext_resource path="res://omniesquerdabaixo.gd" type="Script" id=10]
+[ext_resource path="res://omniesquerda2.gd" type="Script" id=11]
+[ext_resource path="res://omniesquerda3.gd" type="Script" id=12]
+[ext_resource path="res://omniesquerda4.gd" type="Script" id=13]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 5, 10 )
+
+[node name="omnibaixo" type="KinematicBody2D" parent="."]
+position = Vector2( 5, 10 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="omnibaixo"]
+position = Vector2( 5, 10 )
+texture = ExtResource( 2 )
+
+[node name="omnicima" type="KinematicBody2D" parent="."]
+position = Vector2( 5, 10 )
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="omnicima"]
+position = Vector2( 5, 10 )
+texture = ExtResource( 2 )
+
+[node name="omniesquerda" type="KinematicBody2D" parent="."]
+position = Vector2( 5, 10 )
+script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="omniesquerda"]
+position = Vector2( 5, 10 )
+texture = ExtResource( 2 )
+
+[node name="omnidireita" type="KinematicBody2D" parent="."]
+position = Vector2( 5, 10 )
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="omnidireita"]
+position = Vector2( 5, 10 )
+texture = ExtResource( 2 )
+
+[node name="omnidireitabaixo1" type="KinematicBody2D" parent="."]
+position = Vector2( 5, 10 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="omnidireitabaixo1"]
+position = Vector2( 5, 10 )
+texture = ExtResource( 2 )
+
+[node name="omnidireitabaixo2" type="KinematicBody2D" parent="."]
+position = Vector2( 5, 10 )
+script = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="omnidireitabaixo2"]
+position = Vector2( 5, 10 )
+texture = ExtResource( 2 )
+
+[node name="omnidiretabaixo3" type="KinematicBody2D" parent="."]
+position = Vector2( 5, 10 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="omnidiretabaixo3"]
+position = Vector2( 5, 10 )
+texture = ExtResource( 2 )
+
+[node name="omnidiretabaixo4" type="KinematicBody2D" parent="."]
+position = Vector2( 5, 10 )
+script = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="omnidiretabaixo4"]
+position = Vector2( 5, 10 )
+texture = ExtResource( 2 )
+
+[node name="omniesquerdabaixo" type="KinematicBody2D" parent="."]
+position = Vector2( 5, 10 )
+script = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="omniesquerdabaixo"]
+position = Vector2( 5, 10 )
+texture = ExtResource( 2 )
+
+[node name="omniesquerda2" type="KinematicBody2D" parent="."]
+position = Vector2( 5, 10 )
+script = ExtResource( 11 )
+
+[node name="Sprite" type="Sprite" parent="omniesquerda2"]
+position = Vector2( 5, 10 )
+texture = ExtResource( 2 )
+
+[node name="omniesquerda3" type="KinematicBody2D" parent="."]
+position = Vector2( 5, 10 )
+script = ExtResource( 12 )
+
+[node name="Sprite" type="Sprite" parent="omniesquerda3"]
+position = Vector2( 5, 10 )
+normal_map = ExtResource( 2 )
+
+[node name="omniesquerda4" type="KinematicBody2D" parent="."]
+position = Vector2( 5, 10 )
+script = ExtResource( 13 )
+
+[node name="Sprite" type="Sprite" parent="omniesquerda4"]
+position = Vector2( 5, 10 )
+texture = ExtResource( 2 )

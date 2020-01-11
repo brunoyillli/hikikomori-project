@@ -1,0 +1,26 @@
+Intro Rust Free v1.001
+January 17 2017
+
+General font updates
+
+file changes:
+Intro Script R H2 Base v1.1 - UPDATED from v1.0
+
+----
+Intro Rust Free v1.001
+January 17 2017
+
+General font updates
+
+file changes:
+Intro Head R Base v1.1 - UPDATED from v1.0
+
+
+----
+Intro Rust Free v1.0
+December 07 2016
+
+files included:
+Intro Rust G Base 2 Line v1.0
+Intro Head R Base v1.0
+Intro Script R H2 Base v1.0
