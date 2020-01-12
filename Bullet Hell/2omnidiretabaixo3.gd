@@ -8,3 +8,7 @@ func _physics_process(delta):
 
 func _ready():
 	pass
+
+
+func _on_Timer_timeout():
+	queue_free ( )

@@ -6,6 +6,10 @@ func _physics_process(delta):
 	pos = move_and_slide(pos)
 	pos.y += 25
 	pos.x -= 15
-	
+
 func _ready():
 	pass
+
+
+func _on_Timer_timeout():
+	queue_free()
