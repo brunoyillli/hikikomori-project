@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/Node2D.gd" type="Script" id=1]
 [ext_resource path="res://bullets.tscn" type="PackedScene" id=2]
@@ -6,12 +6,10 @@
 [ext_resource path="res://scripts/Heroína.gd" type="Script" id=4]
 [ext_resource path="res://Sprites/heroina_1.png" type="Texture" id=5]
 [ext_resource path="res://Fontes/Komika-Display/Komika_display_kaps_bold.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://scripts/inimigo.gd" type="Script" id=7]
-[ext_resource path="res://Sprites/inimigo1.png" type="Texture" id=8]
-[ext_resource path="res://Fontes/Komika-Display/Komika_display.ttf" type="DynamicFontData" id=9]
-[ext_resource path="res://Fontes/jam-icons.ttf" type="DynamicFontData" id=10]
-[ext_resource path="res://Sprites/spring.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/japan.png" type="Texture" id=12]
+[ext_resource path="res://Fontes/Komika-Display/Komika_display.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Fontes/jam-icons.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Sprites/spring.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/japan.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 42
@@ -29,53 +27,55 @@ font_data = ExtResource( 6 )
 [sub_resource type="DynamicFont" id=4]
 size = 60
 extra_spacing_char = 8
-font_data = ExtResource( 9 )
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 30
-font_data = ExtResource( 10 )
+font_data = ExtResource( 8 )
 
 [node name="Node2D" type="Node2D"]
+position = Vector2( -393.643, 299.169 )
 script = ExtResource( 1 )
 
 [node name="bullets" parent="." instance=ExtResource( 2 )]
+position = Vector2( -419.886, 241.434 )
 
 [node name="Camera_fulscreen" type="Camera2D" parent="."]
-position = Vector2( -10.423, 11.1673 )
+position = Vector2( -430.309, 252.602 )
 zoom = Vector2( 1.4, 1.3 )
 
 [node name="Camera_windowed" type="Camera2D" parent="."]
-position = Vector2( -9.98074, 14.5489 )
+position = Vector2( -429.866, 255.983 )
 current = true
 zoom = Vector2( 1.09, 1.3 )
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( -211.282, 388.532 )
+position = Vector2( -631.168, 629.966 )
 scale = Vector2( 3.90796, 0.303111 )
 texture = ExtResource( 3 )
 
 [node name="Sprite3" type="Sprite" parent="."]
-position = Vector2( -552.323, 11.7279 )
+position = Vector2( -972.209, 253.162 )
 scale = Vector2( 0.201, 6.68015 )
 texture = ExtResource( 3 )
 
 [node name="Sprite4" type="Sprite" parent="."]
-position = Vector2( -10.1035, -360.75 )
+position = Vector2( -429.989, -119.316 )
 scale = Vector2( 6.10212, 0.291666 )
 texture = ExtResource( 3 )
 
 [node name="Sprite5" type="Sprite" parent="."]
-position = Vector2( 124.875, 13.3124 )
+position = Vector2( -295.011, 254.747 )
 scale = Vector2( 0.278532, 6.64237 )
 texture = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 342.346, 29.7501 )
+position = Vector2( -77.5397, 271.184 )
 scale = Vector2( 2.25021, 6.95465 )
 texture = ExtResource( 3 )
 
 [node name="Heroína" type="KinematicBody2D" parent="."]
-position = Vector2( -189, 168.75 )
+position = Vector2( -608.886, 410.184 )
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Heroína"]
@@ -89,10 +89,10 @@ autostart = true
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 294.093
-margin_top = -223.233
-margin_right = 602.093
-margin_bottom = -166.233
+margin_left = -125.793
+margin_top = 18.2013
+margin_right = 182.207
+margin_bottom = 75.2013
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.862745, 0.105882, 0.211765, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -102,10 +102,10 @@ text = "00000000000"
 [node name="Label2" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 275.77
-margin_top = -279.828
-margin_right = 590.77
-margin_bottom = -222.828
+margin_left = -144.116
+margin_top = -38.3937
+margin_right = 170.884
+margin_bottom = 18.6063
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.862745, 0.105882, 0.211765, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -115,10 +115,10 @@ text = "00000000000"
 [node name="Label3" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 232.045
-margin_top = -41.2081
-margin_right = 321.045
-margin_bottom = 15.7919
+margin_left = -187.841
+margin_top = 200.226
+margin_right = -98.8407
+margin_bottom = 257.226
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.862745, 0.105882, 0.211765, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -126,87 +126,64 @@ custom_constants/shadow_offset_x = 4
 text = "000"
 
 [node name="Label4" type="Label" parent="."]
-margin_left = 128.799
-margin_top = -268.0
-margin_right = 254.799
-margin_bottom = -231.0
+margin_left = -291.087
+margin_top = -26.5657
+margin_right = -165.087
+margin_bottom = 10.4343
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Hi Score:"
 
 [node name="Label5" type="Label" parent="."]
-margin_left = 128.799
-margin_top = -212.0
-margin_right = 278.799
-margin_bottom = -175.0
+margin_left = -291.087
+margin_top = 29.4343
+margin_right = -141.087
+margin_bottom = 66.4343
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Pontuação:"
 
 [node name="Label6" type="Label" parent="."]
-margin_left = 128.799
-margin_top = -156.0
-margin_right = 208.799
-margin_bottom = -119.0
+margin_left = -291.087
+margin_top = 85.4343
+margin_right = -211.087
+margin_bottom = 122.434
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Vidas:"
 
 [node name="Label7" type="Label" parent="."]
-margin_left = 128.799
-margin_top = -87.0
-margin_right = 239.799
-margin_bottom = -50.0
+margin_left = -291.087
+margin_top = 154.434
+margin_right = -180.087
+margin_bottom = 191.434
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Bombas:"
 
 [node name="Label8" type="Label" parent="."]
-margin_left = 128.799
-margin_top = -31.0
-margin_right = 213.799
-margin_bottom = 6.0
+margin_left = -291.087
+margin_top = 210.434
+margin_right = -206.087
+margin_bottom = 247.434
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Força:"
 
 [node name="Label9" type="Label" parent="."]
-margin_left = 128.799
-margin_top = 25.0
-margin_right = 269.799
-margin_bottom = 62.0
+margin_left = -291.087
+margin_top = 266.434
+margin_right = -150.087
+margin_bottom = 303.434
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Santidade:"
 
-[node name="inimigo" type="KinematicBody2D" parent="."]
-position = Vector2( -67.5343, -251.669 )
-script = ExtResource( 7 )
-
-[node name="Timer" type="Timer" parent="inimigo"]
-wait_time = 0.14
-autostart = true
-
-[node name="Sprite" type="Sprite" parent="inimigo"]
-position = Vector2( 1.49999, -9.75003 )
-scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 8 )
-
-[node name="Timer2" type="Timer" parent="inimigo"]
-wait_time = 0.25
-one_shot = true
-
-[node name="Timer3" type="Timer" parent="inimigo"]
-wait_time = 0.25
-one_shot = true
-
-[node name="Area2D" type="Area2D" parent="inimigo"]
-
 [node name="Label10" type="Label" parent="."]
-margin_left = 184.615
-margin_top = -361.586
-margin_right = 438.615
-margin_bottom = -289.586
+margin_left = -235.271
+margin_top = -120.152
+margin_right = 18.7292
+margin_bottom = -48.1517
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.878431, 0, 0.360784, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -217,68 +194,71 @@ custom_constants/shadow_as_outline = 0
 text = "JIGOKU"
 
 [node name="Label11" type="Label" parent="."]
-margin_left = -113.0
-margin_top = -141.0
-margin_right = -33.0
-margin_bottom = -56.0
+margin_left = -532.886
+margin_top = 100.434
+margin_right = -452.886
+margin_bottom = 185.434
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 
 [node name="spring" type="Sprite" parent="."]
-position = Vector2( 241.58, -130.04 )
+position = Vector2( -178.306, 111.394 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 11 )
+texture = ExtResource( 9 )
 
 [node name="spring6" type="Sprite" parent="."]
-position = Vector2( 518.766, -138.525 )
+position = Vector2( 98.8804, 102.909 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 11 )
+texture = ExtResource( 9 )
 
 [node name="spring5" type="Sprite" parent="."]
-position = Vector2( 295.32, -141.353 )
+position = Vector2( -124.566, 100.081 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 11 )
+texture = ExtResource( 9 )
 
 [node name="spring4" type="Sprite" parent="."]
-position = Vector2( 465.026, -124.383 )
+position = Vector2( 45.1401, 117.051 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 11 )
+texture = ExtResource( 9 )
 
 [node name="spring2" type="Sprite" parent="."]
-position = Vector2( 405.629, -144.182 )
+position = Vector2( -14.2568, 97.2522 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 11 )
+texture = ExtResource( 9 )
 
 [node name="spring3" type="Sprite" parent="."]
-position = Vector2( 349.061, -127.211 )
+position = Vector2( -70.8247, 114.223 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 11 )
+texture = ExtResource( 9 )
 
 [node name="japan" type="Sprite" parent="."]
-position = Vector2( 290, -68 )
+position = Vector2( -129.886, 173.434 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 12 )
+texture = ExtResource( 10 )
 
 [node name="japan5" type="Sprite" parent="japan"]
 position = Vector2( 2000, 0 )
-texture = ExtResource( 12 )
+texture = ExtResource( 10 )
 
 [node name="japan4" type="Sprite" parent="japan"]
 position = Vector2( 1500, 0 )
-texture = ExtResource( 12 )
+texture = ExtResource( 10 )
 
 [node name="japan" type="Sprite" parent="japan"]
 position = Vector2( 500, 0 )
-texture = ExtResource( 12 )
+texture = ExtResource( 10 )
 
 [node name="japan2" type="Sprite" parent="japan"]
 position = Vector2( 1000, 0 )
-texture = ExtResource( 12 )
+texture = ExtResource( 10 )
 
 [node name="japan3" type="Sprite" parent="japan"]
 position = Vector2( 2500, 0 )
-texture = ExtResource( 12 )
+texture = ExtResource( 10 )
+
+[node name="TimerInimigo" type="Timer" parent="."]
+wait_time = 1.25
+one_shot = true
+autostart = true
 [connection signal="timeout" from="Heroína/Timer" to="Heroína" method="_on_Timer_timeout"]
-[connection signal="timeout" from="inimigo/Timer" to="inimigo" method="_on_Timer_timeout"]
-[connection signal="timeout" from="inimigo/Timer2" to="inimigo" method="_on_Timer2_timeout"]
-[connection signal="timeout" from="inimigo/Timer3" to="inimigo" method="_on_Timer3_timeout"]
+[connection signal="timeout" from="TimerInimigo" to="." method="_on_TimerInimigo_timeout"]
