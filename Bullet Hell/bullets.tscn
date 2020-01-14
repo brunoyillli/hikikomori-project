@@ -4,7 +4,7 @@
 [ext_resource path="res://Sprites/bala.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 7.83556
+radius = 8.13715
 height = 1.36399
 
 [node name="Node2D" type="Node2D"]
@@ -13,12 +13,12 @@ height = 1.36399
 position = Vector2( -2.28882e-005, 3.99998 )
 script = ExtResource( 1 )
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bulets"]
+position = Vector2( -0.460777, 1.38234 )
+shape = SubResource( 1 )
+
 [node name="Sprite" type="Sprite" parent="bulets"]
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="bulets"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bulets/Area2D"]
-position = Vector2( -0.460777, 1.38234 )
-shape = SubResource( 1 )

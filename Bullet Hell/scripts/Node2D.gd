@@ -2,10 +2,10 @@ extends Node2D
 
 onready var loadpath1 = load("res://movimento_inimigo_1.tscn")
 var chave1
-
+var score= 123
 
 func _ready():
-	pass 
+	pass
 	
 func _physics_process(delta):
 
@@ -13,7 +13,8 @@ func _physics_process(delta):
 
 	if OS.is_window_maximized() == false:
 		$Camera_windowed.make_current()
-
+	
+	
 
 	if OS.is_window_maximized():
 		$Camera_fulscreen.make_current()
@@ -23,6 +24,6 @@ func _physics_process(delta):
 		add_child(loadpath_1)
 		chave1 = false
 		
-		
+
 func _on_TimerInimigo_timeout():
 	chave1 = true

@@ -42,6 +42,7 @@ func _bullet_spawn():
 		add_child(omnibullet2)
 		omniespera2 = false
 		$Timer2.start()
+	
 
 func _on_Timer_timeout():
 	tiroespera = true
@@ -54,3 +55,10 @@ func _on_Timer2_timeout():
 
 func _on_Timer3_timeout():
 	omniespera2 = true
+
+
+
+
+func _on_Area2D_body_entered(body):
+	get_node("/root/Node2D").score += 12
+	print("body")
