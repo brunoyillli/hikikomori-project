@@ -2,7 +2,9 @@ extends Node2D
 
 onready var loadpath1 = load("res://movimento_inimigo_1.tscn")
 var chave1
-var score= 123
+var score= 0
+var timer_ini1 = 0
+
 
 func _ready():
 	pass

@@ -21,7 +21,7 @@
 [ext_resource path="res://Sprites/spring.png" type="Texture" id=19]
 [ext_resource path="res://Sprites/japan.png" type="Texture" id=20]
 
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": false,
@@ -29,28 +29,28 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=6]
+[sub_resource type="CircleShape2D" id=2]
 radius = 8.0984
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=3]
 size = 42
 font_data = ExtResource( 15 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=4]
 size = 42
 extra_spacing_char = 1
 font_data = ExtResource( 15 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=5]
 size = 30
 font_data = ExtResource( 15 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=6]
 size = 60
 extra_spacing_char = 8
 font_data = ExtResource( 17 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=7]
 size = 30
 font_data = ExtResource( 18 )
 
@@ -81,8 +81,8 @@ scale = Vector2( 0.201, 6.68015 )
 texture = ExtResource( 3 )
 
 [node name="Sprite4" type="Sprite" parent="."]
-position = Vector2( -429.989, -119.316 )
-scale = Vector2( 6.10212, 0.291666 )
+position = Vector2( -430.767, -119.316 )
+scale = Vector2( 6.09367, 0.291666 )
 texture = ExtResource( 3 )
 
 [node name="Sprite5" type="Sprite" parent="."]
@@ -101,8 +101,9 @@ script = ExtResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Heroína"]
 visible = false
-frames = SubResource( 7 )
+frames = SubResource( 1 )
 animation = "exp"
+speed_scale = 3.0
 
 [node name="Sprite" type="Sprite" parent="Heroína"]
 texture = ExtResource( 13 )
@@ -115,7 +116,7 @@ autostart = true
 [node name="Area2D" type="Area2D" parent="Heroína"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Heroína/Area2D"]
-shape = SubResource( 6 )
+shape = SubResource( 2 )
 
 [node name="Sprite2" type="Sprite" parent="Heroína"]
 visible = false
@@ -130,7 +131,7 @@ margin_left = -125.793
 margin_top = 18.2013
 margin_right = 182.207
 margin_bottom = 75.2013
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.862745, 0.105882, 0.211765, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 4
@@ -143,7 +144,7 @@ margin_left = -144.116
 margin_top = -38.3937
 margin_right = 170.884
 margin_bottom = 18.6063
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.862745, 0.105882, 0.211765, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 4
@@ -156,7 +157,7 @@ margin_left = -187.841
 margin_top = 200.226
 margin_right = -98.8407
 margin_bottom = 257.226
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.862745, 0.105882, 0.211765, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 4
@@ -167,7 +168,7 @@ margin_left = -291.087
 margin_top = -26.5657
 margin_right = -165.087
 margin_bottom = 10.4343
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Hi Score:"
 
@@ -176,7 +177,7 @@ margin_left = -291.087
 margin_top = 29.4343
 margin_right = -141.087
 margin_bottom = 66.4343
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Pontuação:"
 
@@ -185,7 +186,7 @@ margin_left = -291.087
 margin_top = 85.4343
 margin_right = -211.087
 margin_bottom = 122.434
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Vidas:"
 
@@ -194,7 +195,7 @@ margin_left = -291.087
 margin_top = 154.434
 margin_right = -180.087
 margin_bottom = 191.434
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Bombas:"
 
@@ -203,7 +204,7 @@ margin_left = -291.087
 margin_top = 210.434
 margin_right = -206.087
 margin_bottom = 247.434
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Força:"
 
@@ -212,7 +213,7 @@ margin_left = -291.087
 margin_top = 266.434
 margin_right = -150.087
 margin_bottom = 303.434
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Santidade:"
 
@@ -221,7 +222,7 @@ margin_left = -235.271
 margin_top = -120.152
 margin_right = 18.7292
 margin_bottom = -48.1517
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.878431, 0, 0.360784, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 5
@@ -235,7 +236,7 @@ margin_left = -532.886
 margin_top = 100.434
 margin_right = -452.886
 margin_bottom = 185.434
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 
 [node name="spring" type="Sprite" parent="."]
@@ -248,17 +249,17 @@ position = Vector2( 98.8804, 102.909 )
 scale = Vector2( 0.08, 0.08 )
 texture = ExtResource( 19 )
 
-[node name="spring5" type="Sprite" parent="."]
+[node name="spring2" type="Sprite" parent="."]
 position = Vector2( -124.566, 100.081 )
 scale = Vector2( 0.08, 0.08 )
 texture = ExtResource( 19 )
 
-[node name="spring4" type="Sprite" parent="."]
+[node name="spring5" type="Sprite" parent="."]
 position = Vector2( 45.1401, 117.051 )
 scale = Vector2( 0.08, 0.08 )
 texture = ExtResource( 19 )
 
-[node name="spring2" type="Sprite" parent="."]
+[node name="spring4" type="Sprite" parent="."]
 position = Vector2( -14.2568, 97.2522 )
 scale = Vector2( 0.08, 0.08 )
 texture = ExtResource( 19 )
@@ -297,6 +298,11 @@ texture = ExtResource( 20 )
 wait_time = 1.25
 one_shot = true
 autostart = true
+
+[node name="TimerMorte" type="Timer" parent="."]
+wait_time = 1.66
+one_shot = true
 [connection signal="timeout" from="Heroína/Timer" to="Heroína" method="_on_Timer_timeout"]
 [connection signal="body_entered" from="Heroína/Area2D" to="Heroína" method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="TimerInimigo" to="." method="_on_TimerInimigo_timeout"]
+[connection signal="timeout" from="TimerMorte" to="Heroína" method="_on_TimerMorte_timeout"]
