@@ -1,38 +1,58 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scripts/Node2D.gd" type="Script" id=1]
 [ext_resource path="res://bullets.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/bordas.png" type="Texture" id=3]
 [ext_resource path="res://scripts/Heroína.gd" type="Script" id=4]
-[ext_resource path="res://Sprites/heroina_1.png" type="Texture" id=5]
-[ext_resource path="res://Fontes/Komika-Display/Komika_display_kaps_bold.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://Label.gd" type="Script" id=7]
-[ext_resource path="res://Fontes/Komika-Display/Komika_display.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://Fontes/jam-icons.ttf" type="DynamicFontData" id=9]
-[ext_resource path="res://Sprites/spring.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/japan.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/explosion1.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/explosion2.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/explosion3.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/explosion4.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/explosion5.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/explosion6.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/exploison7.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Sem ss.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/heroina_1.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/hitbox.png" type="Texture" id=14]
+[ext_resource path="res://Fontes/Komika-Display/Komika_display_kaps_bold.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://Label.gd" type="Script" id=16]
+[ext_resource path="res://Fontes/Komika-Display/Komika_display.ttf" type="DynamicFontData" id=17]
+[ext_resource path="res://Fontes/jam-icons.ttf" type="DynamicFontData" id=18]
+[ext_resource path="res://Sprites/spring.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/japan.png" type="Texture" id=20]
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": false,
+"name": "exp",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 8.0984
 
 [sub_resource type="DynamicFont" id=1]
 size = 42
-font_data = ExtResource( 6 )
+font_data = ExtResource( 15 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 42
 extra_spacing_char = 1
-font_data = ExtResource( 6 )
+font_data = ExtResource( 15 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 30
-font_data = ExtResource( 6 )
+font_data = ExtResource( 15 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 60
 extra_spacing_char = 8
-font_data = ExtResource( 8 )
+font_data = ExtResource( 17 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 30
-font_data = ExtResource( 9 )
+font_data = ExtResource( 18 )
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( -393.643, 299.169 )
@@ -79,13 +99,29 @@ texture = ExtResource( 3 )
 position = Vector2( -608.886, 410.184 )
 script = ExtResource( 4 )
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Heroína"]
+visible = false
+frames = SubResource( 7 )
+animation = "exp"
+
 [node name="Sprite" type="Sprite" parent="Heroína"]
-texture = ExtResource( 5 )
+texture = ExtResource( 13 )
 
 [node name="Timer" type="Timer" parent="Heroína"]
 process_mode = 0
 wait_time = 0.07
 autostart = true
+
+[node name="Area2D" type="Area2D" parent="Heroína"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Heroína/Area2D"]
+shape = SubResource( 6 )
+
+[node name="Sprite2" type="Sprite" parent="Heroína"]
+visible = false
+position = Vector2( 0.00195313, 0.0742188 )
+scale = Vector2( 0.04, 0.04 )
+texture = ExtResource( 14 )
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
@@ -98,7 +134,7 @@ custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.862745, 0.105882, 0.211765, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 4
-script = ExtResource( 7 )
+script = ExtResource( 16 )
 
 [node name="Label2" type="Label" parent="."]
 anchor_right = 1.0
@@ -205,61 +241,62 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 [node name="spring" type="Sprite" parent="."]
 position = Vector2( -178.306, 111.394 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 10 )
+texture = ExtResource( 19 )
 
 [node name="spring6" type="Sprite" parent="."]
 position = Vector2( 98.8804, 102.909 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 10 )
+texture = ExtResource( 19 )
 
 [node name="spring5" type="Sprite" parent="."]
 position = Vector2( -124.566, 100.081 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 10 )
+texture = ExtResource( 19 )
 
 [node name="spring4" type="Sprite" parent="."]
 position = Vector2( 45.1401, 117.051 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 10 )
+texture = ExtResource( 19 )
 
 [node name="spring2" type="Sprite" parent="."]
 position = Vector2( -14.2568, 97.2522 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 10 )
+texture = ExtResource( 19 )
 
 [node name="spring3" type="Sprite" parent="."]
 position = Vector2( -70.8247, 114.223 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 10 )
+texture = ExtResource( 19 )
 
 [node name="japan" type="Sprite" parent="."]
 position = Vector2( -129.886, 173.434 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 11 )
+texture = ExtResource( 20 )
 
 [node name="japan5" type="Sprite" parent="japan"]
 position = Vector2( 2000, 0 )
-texture = ExtResource( 11 )
+texture = ExtResource( 20 )
 
 [node name="japan4" type="Sprite" parent="japan"]
 position = Vector2( 1500, 0 )
-texture = ExtResource( 11 )
+texture = ExtResource( 20 )
 
 [node name="japan" type="Sprite" parent="japan"]
 position = Vector2( 500, 0 )
-texture = ExtResource( 11 )
+texture = ExtResource( 20 )
 
 [node name="japan2" type="Sprite" parent="japan"]
 position = Vector2( 1000, 0 )
-texture = ExtResource( 11 )
+texture = ExtResource( 20 )
 
 [node name="japan3" type="Sprite" parent="japan"]
 position = Vector2( 2500, 0 )
-texture = ExtResource( 11 )
+texture = ExtResource( 20 )
 
 [node name="TimerInimigo" type="Timer" parent="."]
 wait_time = 1.25
 one_shot = true
 autostart = true
 [connection signal="timeout" from="Heroína/Timer" to="Heroína" method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Heroína/Area2D" to="Heroína" method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="TimerInimigo" to="." method="_on_TimerInimigo_timeout"]

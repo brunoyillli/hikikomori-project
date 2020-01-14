@@ -60,5 +60,6 @@ func _on_Timer3_timeout():
 
 
 func _on_Area2D_body_entered(body):
-	get_node("/root/Node2D").score += 12
-	print("body")
+	if (body.get_name() == "bulets"):
+		get_node("/root/Node2D").score += 12
+		print("body")

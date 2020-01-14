@@ -24,7 +24,11 @@ func get_input():
 	if Input.is_action_pressed('ui_shoot'):
 		_bullet_spawn()
 
-		
+	if Input.is_action_pressed("ui_focus"):
+        $Sprite2.show()
+
+	if Input.is_action_just_released("ui_focus"):
+		$Sprite2.hide()
 
 func _bullet_spawn():
 	if tiroespera == true:
@@ -46,4 +50,13 @@ func _ready():
 
 func _on_Timer_timeout():
 	tiroespera = true
+
+
+
+func _on_Area2D_body_entered(body):
+	if (body.get_name() == "Heroína") == false:
+		$Sprite.hide()
+		$AnimatedSprite.show()
+		$AnimatedSprite.play("exp")
+
 
