@@ -23,7 +23,7 @@ func _physics_process(delta):
 
 func _bullet_spawn():
 	
-	if get_node("/root/Node2D").timer_ini1 > 100:
+	if get_parent().get_parent().get_parent().get_parent().timer_ini1 > 100:
 		if tiroespera == true:
 			var bullets1 = bullets.instance()
 			bullets1.z_index = -1
@@ -58,7 +58,7 @@ func _bullet_spawn():
 	else:
 		ucounter = 0	
 	
-	get_node("/root/Node2D").timer_ini1 += 1
+	get_parent().get_parent().get_parent().get_parent().timer_ini1 += 1
 	
 func _on_Timer_timeout():
 	tiroespera = true
