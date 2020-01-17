@@ -22,20 +22,12 @@ position = Vector2( 1.49999, -9.75003 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 2 )
 
-[node name="Timer2" type="Timer" parent="inimigo"]
-wait_time = 0.25
-one_shot = true
-
-[node name="Timer3" type="Timer" parent="inimigo"]
-wait_time = 0.25
-one_shot = true
-
 [node name="Area2D" type="Area2D" parent="inimigo"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="inimigo/Area2D"]
 position = Vector2( 3.05176e-005, -15.2057 )
 shape = SubResource( 1 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="inimigo"]
 [connection signal="timeout" from="inimigo/Timer" to="inimigo" method="_on_Timer_timeout"]
-[connection signal="timeout" from="inimigo/Timer2" to="inimigo" method="_on_Timer2_timeout"]
-[connection signal="timeout" from="inimigo/Timer3" to="inimigo" method="_on_Timer3_timeout"]
 [connection signal="body_entered" from="inimigo/Area2D" to="inimigo" method="_on_Area2D_body_entered"]

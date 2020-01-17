@@ -1,36 +1,36 @@
 [gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://scripts/Node2D.gd" type="Script" id=1]
-[ext_resource path="res://bullets.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Sprites/bordas.png" type="Texture" id=3]
-[ext_resource path="res://scripts/Heroína.gd" type="Script" id=4]
-[ext_resource path="res://Sprites/explosion1.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/explosion2.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/explosion3.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/explosion4.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/explosion5.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/explosion6.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/exploison7.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/Sem ss.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/main1.png" type="Texture" id=13]
-[ext_resource path="res://Sprites/main2.png" type="Texture" id=14]
-[ext_resource path="res://Sprites/main3.png" type="Texture" id=15]
-[ext_resource path="res://Sprites/main4.png" type="Texture" id=16]
-[ext_resource path="res://Sprites/main5.png" type="Texture" id=17]
-[ext_resource path="res://Sprites/main6.png" type="Texture" id=18]
-[ext_resource path="res://Sprites/main7.png" type="Texture" id=19]
-[ext_resource path="res://Sprites/main8.png" type="Texture" id=20]
-[ext_resource path="res://Sprites/hitbox.png" type="Texture" id=21]
-[ext_resource path="res://Fontes/Komika-Display/Komika_display_kaps_bold.ttf" type="DynamicFontData" id=22]
-[ext_resource path="res://Label.gd" type="Script" id=23]
-[ext_resource path="res://Fontes/Komika-Display/Komika_display.ttf" type="DynamicFontData" id=24]
-[ext_resource path="res://Fontes/jam-icons.ttf" type="DynamicFontData" id=25]
-[ext_resource path="res://Sprites/spring.png" type="Texture" id=26]
-[ext_resource path="res://Sprites/japan.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/bordas.png" type="Texture" id=2]
+[ext_resource path="res://scripts/Heroína.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/explosion1.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/explosion2.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/explosion3.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/explosion4.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/explosion5.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/explosion6.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/exploison7.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Sem ss.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/main1.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/main2.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/main3.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/main4.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/main5.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/main6.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/main7.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/main8.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/hitbox.png" type="Texture" id=20]
+[ext_resource path="res://Fontes/Komika-Display/Komika_display_kaps_bold.ttf" type="DynamicFontData" id=21]
+[ext_resource path="res://Label.gd" type="Script" id=22]
+[ext_resource path="res://Fontes/Komika-Display/Komika_display.ttf" type="DynamicFontData" id=23]
+[ext_resource path="res://Fontes/jam-icons.ttf" type="DynamicFontData" id=24]
+[ext_resource path="res://Sprites/spring.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/japan.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/200px-YukariPCB.png" type="Texture" id=27]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": false,
 "name": "exp",
 "speed": 5.0
@@ -41,7 +41,7 @@ radius = 8.0984
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -49,32 +49,29 @@ animations = [ {
 
 [sub_resource type="DynamicFont" id=4]
 size = 42
-font_data = ExtResource( 22 )
+font_data = ExtResource( 21 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 42
 extra_spacing_char = 1
-font_data = ExtResource( 22 )
+font_data = ExtResource( 21 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 30
-font_data = ExtResource( 22 )
+font_data = ExtResource( 21 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 60
 extra_spacing_char = 8
-font_data = ExtResource( 24 )
+font_data = ExtResource( 23 )
 
 [sub_resource type="DynamicFont" id=8]
 size = 30
-font_data = ExtResource( 25 )
+font_data = ExtResource( 24 )
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( -393.643, 299.169 )
 script = ExtResource( 1 )
-
-[node name="bullets" parent="." instance=ExtResource( 2 )]
-position = Vector2( -419.886, 241.434 )
 
 [node name="Camera_fulscreen" type="Camera2D" parent="."]
 position = Vector2( -430.309, 252.602 )
@@ -88,31 +85,31 @@ zoom = Vector2( 1.09, 1.3 )
 [node name="Sprite2" type="Sprite" parent="."]
 position = Vector2( -631.168, 629.966 )
 scale = Vector2( 3.90796, 0.303111 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [node name="Sprite3" type="Sprite" parent="."]
 position = Vector2( -972.209, 253.162 )
 scale = Vector2( 0.201, 6.68015 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [node name="Sprite4" type="Sprite" parent="."]
 position = Vector2( -430.767, -119.316 )
 scale = Vector2( 6.09367, 0.291666 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [node name="Sprite5" type="Sprite" parent="."]
 position = Vector2( -295.011, 254.747 )
 scale = Vector2( 0.278532, 6.64237 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -77.5397, 271.184 )
 scale = Vector2( 2.25021, 6.95465 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [node name="Heroína" type="KinematicBody2D" parent="."]
 position = Vector2( -659.428, 424.958 )
-script = ExtResource( 4 )
+script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Heroína"]
 visible = false
@@ -128,7 +125,6 @@ shape = SubResource( 2 )
 [node name="StilllAnim" type="AnimatedSprite" parent="Heroína"]
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
-frame = 7
 speed_scale = 1.5
 playing = true
 
@@ -136,7 +132,7 @@ playing = true
 visible = false
 position = Vector2( 0.00195313, 0.0742188 )
 scale = Vector2( 0.04, 0.04 )
-texture = ExtResource( 21 )
+texture = ExtResource( 20 )
 
 [node name="Timer" type="Timer" parent="Heroína"]
 wait_time = 0.15
@@ -153,7 +149,7 @@ custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.862745, 0.105882, 0.211765, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 4
-script = ExtResource( 23 )
+script = ExtResource( 22 )
 
 [node name="Label2" type="Label" parent="."]
 anchor_right = 1.0
@@ -260,57 +256,57 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 [node name="spring" type="Sprite" parent="."]
 position = Vector2( -178.306, 111.394 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 26 )
+texture = ExtResource( 25 )
 
 [node name="spring6" type="Sprite" parent="."]
 position = Vector2( 98.8804, 102.909 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 26 )
+texture = ExtResource( 25 )
 
 [node name="spring2" type="Sprite" parent="."]
 position = Vector2( -124.566, 100.081 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 26 )
+texture = ExtResource( 25 )
 
 [node name="spring5" type="Sprite" parent="."]
 position = Vector2( 45.1401, 117.051 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 26 )
+texture = ExtResource( 25 )
 
 [node name="spring4" type="Sprite" parent="."]
 position = Vector2( -14.2568, 97.2522 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 26 )
+texture = ExtResource( 25 )
 
 [node name="spring3" type="Sprite" parent="."]
 position = Vector2( -70.8247, 114.223 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 26 )
+texture = ExtResource( 25 )
 
 [node name="japan" type="Sprite" parent="."]
 position = Vector2( -129.886, 173.434 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 27 )
+texture = ExtResource( 26 )
 
 [node name="japan5" type="Sprite" parent="japan"]
 position = Vector2( 2000, 0 )
-texture = ExtResource( 27 )
+texture = ExtResource( 26 )
 
 [node name="japan4" type="Sprite" parent="japan"]
 position = Vector2( 1500, 0 )
-texture = ExtResource( 27 )
+texture = ExtResource( 26 )
 
 [node name="japan" type="Sprite" parent="japan"]
 position = Vector2( 500, 0 )
-texture = ExtResource( 27 )
+texture = ExtResource( 26 )
 
 [node name="japan2" type="Sprite" parent="japan"]
 position = Vector2( 1000, 0 )
-texture = ExtResource( 27 )
+texture = ExtResource( 26 )
 
 [node name="japan3" type="Sprite" parent="japan"]
 position = Vector2( 2500, 0 )
-texture = ExtResource( 27 )
+texture = ExtResource( 26 )
 
 [node name="TimerInimigo" type="Timer" parent="."]
 wait_time = 3.91
@@ -320,6 +316,11 @@ autostart = true
 [node name="TimerMorte" type="Timer" parent="."]
 wait_time = 1.66
 one_shot = true
+
+[node name="200px-YukariPCB" type="Sprite" parent="."]
+position = Vector2( -95.5799, 480.428 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 27 )
 [connection signal="body_entered" from="Heroína/Area2D" to="Heroína" method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="Heroína/Timer" to="Heroína" method="_on_Timer_timeout"]
 [connection signal="timeout" from="TimerInimigo" to="." method="_on_TimerInimigo_timeout"]

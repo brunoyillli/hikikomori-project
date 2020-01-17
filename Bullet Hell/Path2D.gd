@@ -7,7 +7,7 @@ func _ready():
 	set_process(true)
 
 func _process(delta):
-	follow.set_offset(follow.get_offset() + 350 * delta) 
+	follow.set_offset(follow.get_offset() + 250 * delta) 
 
 #func _physics_process(delta):
 	#while(counter < 1):

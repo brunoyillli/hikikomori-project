@@ -5,4 +5,4 @@ func _ready():
 	pass 
 
 func _process(delta):
-	follow.set_offset(follow.get_offset() - 350 * delta) 
+	follow.set_offset(follow.get_offset() - 250 * delta) 

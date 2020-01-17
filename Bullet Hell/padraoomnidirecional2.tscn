@@ -103,10 +103,10 @@ wait_time = 1.85
 one_shot = true
 autostart = true
 [connection signal="timeout" from="Node2D/Timer" to="Node2D/2omnidireitabaixo2" method="_on_Timer_timeout"]
-[connection signal="timeout" from="Node2D/Timer" to="Node2D/2omnidireitabaixo1" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Node2D/Timer" to="Node2D/2omnidiretabaixo3" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Node2D/Timer" to="Node2D/2omnidireitabaixo1" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Node2D/Timer" to="Node2D/2omnidiretabaixo4" method="_on_Timer_timeout"]
-[connection signal="timeout" from="Node2D/Timer" to="Node2D/2omniesquerda2" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Node2D/Timer" to="Node2D/2omniesquerdabaixo" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Node2D/Timer" to="Node2D/2omniesquerda3" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Node2D/Timer" to="Node2D/2omniesquerda4" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Node2D/Timer" to="Node2D/2omniesquerda2" method="_on_Timer_timeout"]
