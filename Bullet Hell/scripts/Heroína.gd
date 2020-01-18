@@ -15,6 +15,7 @@ func _physics_process(delta):
 	_Morte()
 	_Vidas()
 
+
 func get_input():
 	pos = Vector2()
 

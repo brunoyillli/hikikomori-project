@@ -10,7 +10,6 @@ height = 22.5341
 [node name="Node2D" type="Node2D"]
 
 [node name="inimigo" type="KinematicBody2D" parent="."]
-position = Vector2( -67.5343, -251.669 )
 script = ExtResource( 1 )
 
 [node name="Timer" type="Timer" parent="inimigo"]

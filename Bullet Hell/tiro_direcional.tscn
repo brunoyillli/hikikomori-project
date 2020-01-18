@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://tiro_direcional.gd" type="Script" id=1]
+[ext_resource path="res://direcional.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/explosion1.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 12.3099
+
+[node name="gordon" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="direcional" type="KinematicBody2D" parent="."]
+position = Vector2( 5, 10 )
+collision_layer = 32
+collision_mask = 0
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="direcional"]
+position = Vector2( 5, 10 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="direcional"]
+position = Vector2( 4.53604, 9.8968 )
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.48
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

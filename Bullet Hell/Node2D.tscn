@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://scripts/Node2D.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/bordas.png" type="Texture" id=2]
@@ -23,10 +23,13 @@
 [ext_resource path="res://Fontes/Komika-Display/Komika_display_kaps_bold.ttf" type="DynamicFontData" id=21]
 [ext_resource path="res://Label.gd" type="Script" id=22]
 [ext_resource path="res://Fontes/Komika-Display/Komika_display.ttf" type="DynamicFontData" id=23]
-[ext_resource path="res://Fontes/jam-icons.ttf" type="DynamicFontData" id=24]
-[ext_resource path="res://Sprites/spring.png" type="Texture" id=25]
-[ext_resource path="res://Sprites/japan.png" type="Texture" id=26]
-[ext_resource path="res://Sprites/200px-YukariPCB.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/spring.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/japan.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/200px-YukariPCB.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/534a9be5c47a74aff8bc77d17f5c246d.jpg" type="Texture" id=27]
+[ext_resource path="res://Sprites/266bbcfb17996cf684f9eb4d834785b0.jpg" type="Texture" id=28]
+[ext_resource path="res://ini3.gd" type="Script" id=29]
+[ext_resource path="res://Sprites/inimigo1.png" type="Texture" id=30]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -65,9 +68,9 @@ size = 60
 extra_spacing_char = 8
 font_data = ExtResource( 23 )
 
-[sub_resource type="DynamicFont" id=8]
-size = 30
-font_data = ExtResource( 24 )
+[sub_resource type="CapsuleShape2D" id=8]
+radius = 29.4179
+height = 22.5341
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( -393.643, 299.169 )
@@ -108,7 +111,7 @@ scale = Vector2( 2.25021, 6.95465 )
 texture = ExtResource( 2 )
 
 [node name="Heroína" type="KinematicBody2D" parent="."]
-position = Vector2( -659.428, 424.958 )
+position = Vector2( -690.218, 482.14 )
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Heroína"]
@@ -125,6 +128,7 @@ shape = SubResource( 2 )
 [node name="StilllAnim" type="AnimatedSprite" parent="Heroína"]
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
+frame = 4
 speed_scale = 1.5
 playing = true
 
@@ -245,68 +249,60 @@ custom_constants/shadow_offset_y = 6
 custom_constants/shadow_as_outline = 0
 text = "JIGOKU"
 
-[node name="Label11" type="Label" parent="."]
-margin_left = -532.886
-margin_top = 100.434
-margin_right = -452.886
-margin_bottom = 185.434
-custom_fonts/font = SubResource( 8 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-
 [node name="spring" type="Sprite" parent="."]
 position = Vector2( -178.306, 111.394 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 25 )
+texture = ExtResource( 24 )
 
 [node name="spring6" type="Sprite" parent="."]
 position = Vector2( 98.8804, 102.909 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 25 )
+texture = ExtResource( 24 )
 
 [node name="spring2" type="Sprite" parent="."]
 position = Vector2( -124.566, 100.081 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 25 )
+texture = ExtResource( 24 )
 
 [node name="spring5" type="Sprite" parent="."]
 position = Vector2( 45.1401, 117.051 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 25 )
+texture = ExtResource( 24 )
 
 [node name="spring4" type="Sprite" parent="."]
 position = Vector2( -14.2568, 97.2522 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 25 )
+texture = ExtResource( 24 )
 
 [node name="spring3" type="Sprite" parent="."]
 position = Vector2( -70.8247, 114.223 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 25 )
+texture = ExtResource( 24 )
 
 [node name="japan" type="Sprite" parent="."]
 position = Vector2( -129.886, 173.434 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 26 )
+texture = ExtResource( 25 )
 
 [node name="japan5" type="Sprite" parent="japan"]
 position = Vector2( 2000, 0 )
-texture = ExtResource( 26 )
+texture = ExtResource( 25 )
 
 [node name="japan4" type="Sprite" parent="japan"]
 position = Vector2( 1500, 0 )
-texture = ExtResource( 26 )
+texture = ExtResource( 25 )
 
 [node name="japan" type="Sprite" parent="japan"]
 position = Vector2( 500, 0 )
-texture = ExtResource( 26 )
+texture = ExtResource( 25 )
 
 [node name="japan2" type="Sprite" parent="japan"]
 position = Vector2( 1000, 0 )
-texture = ExtResource( 26 )
+texture = ExtResource( 25 )
 
 [node name="japan3" type="Sprite" parent="japan"]
 position = Vector2( 2500, 0 )
-texture = ExtResource( 26 )
+texture = ExtResource( 25 )
 
 [node name="TimerInimigo" type="Timer" parent="."]
 wait_time = 3.91
@@ -320,8 +316,37 @@ one_shot = true
 [node name="200px-YukariPCB" type="Sprite" parent="."]
 position = Vector2( -95.5799, 480.428 )
 scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 26 )
+
+[node name="534a9be5c47a74aff8bc77d17f5c246d" type="Sprite" parent="."]
+position = Vector2( -1555.73, 353.376 )
+scale = Vector2( 1.21993, 1.07331 )
 texture = ExtResource( 27 )
+
+[node name="266bbcfb17996cf684f9eb4d834785b0" type="Sprite" parent="534a9be5c47a74aff8bc77d17f5c246d"]
+position = Vector2( 2886.3, 200.236 )
+texture = ExtResource( 28 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Node2D2" type="Node2D" parent="."]
+
+[node name="ini3" type="KinematicBody2D" parent="Node2D2"]
+position = Vector2( -608.724, 90.4614 )
+script = ExtResource( 29 )
+
+[node name="Sprite" type="Sprite" parent="Node2D2/ini3"]
+position = Vector2( 1.49999, -9.75003 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 30 )
+
+[node name="Area2D" type="Area2D" parent="Node2D2/ini3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/ini3/Area2D"]
+position = Vector2( 3.05176e-005, -15.2057 )
+shape = SubResource( 8 )
 [connection signal="body_entered" from="Heroína/Area2D" to="Heroína" method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="Heroína/Timer" to="Heroína" method="_on_Timer_timeout"]
 [connection signal="timeout" from="TimerInimigo" to="." method="_on_TimerInimigo_timeout"]
 [connection signal="timeout" from="TimerMorte" to="Heroína" method="_on_TimerMorte_timeout"]
+[connection signal="body_entered" from="Node2D2/ini3/Area2D" to="Node2D2/ini3" method="_on_Area2D_body_entered"]
