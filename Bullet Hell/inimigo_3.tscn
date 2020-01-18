@@ -3,7 +3,7 @@
 [ext_resource path="res://ini3.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/inimigo1.png" type="Texture" id=2]
 
-[sub_resource type="CapsuleShape2D" id=8]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 29.4179
 height = 22.5341
 
@@ -22,5 +22,5 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ini3/Area2D"]
 position = Vector2( 3.05176e-005, -15.2057 )
-shape = SubResource( 8 )
+shape = SubResource( 1 )
 [connection signal="body_entered" from="ini3/Area2D" to="ini3" method="_on_Area2D_body_entered"]

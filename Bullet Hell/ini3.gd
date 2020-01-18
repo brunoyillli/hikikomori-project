@@ -37,7 +37,7 @@ func _ready():
 
 func _physics_process(delta):
 	_bullet_spawn()
-	#mover()
+	_mover()
 	_counters()
 	_get_position()
 	_tg()
@@ -141,7 +141,7 @@ func _bullet_spawn():
 				
 
 func _mover():
-	if timer_ini_1 < 100:
+	if timer_ini_1 < 120:
 		pos = Vector2()	
 		pos.y += 120
 		pos = move_and_slide(pos)
@@ -184,8 +184,8 @@ func _tg():
 
 
 	tangente = def_x/def_y
-	superdefx = rad2deg(sin(atan(tangente)))*50
-	superdefy = rad2deg(cos(atan(tangente)))*50
+	superdefx = rad2deg(sin(atan(tangente)))*25
+	superdefy = rad2deg(cos(atan(tangente)))*25
 	
 	
 	if (selfposx < targetposx) and (selfposy < targetposy):
