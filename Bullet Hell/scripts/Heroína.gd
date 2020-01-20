@@ -76,7 +76,7 @@ func _Morte():
 		$StilllAnim.show()
 		bool_morte = false
 		arealock = true
-		print('gordo')
+
 		
 		
 
