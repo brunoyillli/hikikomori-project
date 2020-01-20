@@ -8,7 +8,6 @@ onready var targetposx = get_node("/root/Node2D/Heroína").position.x
 onready var omni1 = load("res://test.tscn")
 onready var omni2 = load("res://tiro_direcional.tscn")
 var directional_bullet
-var ccounter = 0
 var vcounter = 15
 var timer_ini_1 = 0
 var ex = -200
@@ -30,10 +29,7 @@ var opcat = 0
 var adjcat = 0
 
 func _ready():
-	for i in range(1, 10):
-		print(i)
-	print(x_dir, y_dir)
-	print(self.get_path())
+	pass
 
 func _physics_process(delta):
 	_bullet_spawn()
@@ -48,96 +44,110 @@ func _physics_process(delta):
 func _bullet_spawn():
 	
 	if timer_ini_1 > 300:
-		
-		if ccounter == 0:
-			pass
+		if vcounter == 0:
+			if(vc == 0 ):
+				why = 282
+				ex = 0
+				vc += 1
+				_omni()
 
-		if vcounter == 15:
-			while(vc < 2):
-				_omni()
-				while(cv < 1):
-					ex += 400; why += 400
-					cv += 1
+			if(vc == 1 ):
+				ex = 282
+				why = 0
 				vc += 1
-					
-			while(vc >= 2 and vc < 4 ):
-				why -= 200
 				_omni()
+
+			if(vc == 2 ):
+				ex = -282
+				why = 0
 				vc += 1
-					
-			while(vc >= 4 and vc < 6 ):
-				while(cv < 2):
-					ex = -200
-					why = 200
-					cv += 1
 				_omni()
-				why -= 200
+
+			if(vc == 3 ):
+				why = -282
+				ex = 0
 				vc += 1
-					
-			while(vc >= 6 and vc < 8 ):
-				while(cv < 3):
-					ex = 0
-					why = -200
-					cv += 1
 				_omni()
-				why += 400
+
+			if(vc == 4 ):
+				why = -199.5
+				ex = -199.5
 				vc += 1
+				_omni()
 				
-			if(vc >= 8 and vc < 9 ):
+			if(vc == 5 ):
+				why = 199.5
+				ex = -199.5
+				vc += 1
+				_omni()
+				
+			if(vc == 6 ):
+				why = -199.5
+				ex = 199.5
+				vc += 1
+				_omni()
+
+			if(vc == 7 ):
+				why = 199.5
+				ex = 199.5
+				vc += 1
+				_omni()
+
+			if(vc == 8 ):
 				why = 108
 				ex = 261
 				vc += 1
 				_omni()
 
-			if(vc >= 9 and vc < 10 ):
+			if(vc == 9):
 				ex = 108
 				why = 261
 				vc += 1
 				_omni()
 
-			if(vc >= 9 and vc < 10 ):
+			if(vc == 10 ):
 				why = -108
 				ex = 261
 				vc += 1
 				_omni()
 
-			if(vc >= 10 and vc < 11 ):
+			if(vc == 11 ):
 				ex = -108
 				why = 261
 				vc += 1
 				_omni()
 				
-			if(vc >= 11 and vc < 12 ):
+			if(vc == 12 ):
 				why = +108
 				ex = -261
 				vc += 1
 				_omni()
 
-			if(vc >= 12 and vc < 13 ):
+			if(vc == 13):
 				why = -108
 				ex = -261
 				vc += 1
 				_omni()
 				
-			if(vc >= 13 and vc < 14 ):
+			if(vc == 14 ):
 				why = -108
 				ex = +261
 				vc += 1
 				_omni()
 				
-			if(vc >= 14 and vc < 15 ):
+			if(vc == 15 ):
 				why = -261
 				ex = +108
 				vc += 1
 				_omni()
 				
-			if(vc >= 15 and vc < 16 ):
+			if(vc == 16 ):
 				why = -261
 				ex = -108
 				vc += 1
 				_omni()
 				
-			vc = 0; cv = 0; ex = -200; why = -200
+			vc = 0; cv = 0; ex = 0; why = 0
 				
 
 func _mover():
@@ -206,11 +216,6 @@ func _counters():
 	else:
 		vcounter = 0
 	
-
-	if ccounter < 200:
-		ccounter += 1
-	else:
-		ccounter = 0
 		
 	if ecounter < 60:
 		ecounter += 1

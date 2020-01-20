@@ -10,9 +10,8 @@ var vcounter = 20
 var ucounter = 0
 var vc = 0
 var cv = 0
-var ex = -70*20
-var why = 400
-var b = 0
+var ex = -1400
+var why = 500
 func _ready():
 	pass 
 	
@@ -36,16 +35,14 @@ func _bullet_spawn():
 		if vcounter == 20:
 			for i in range (0,6):
 					_omni()
-					ex += 20*20
+					ex += 400
 
 		if ucounter == 20:
-			if b < 1:
-				ex = -80*20
+			ex = -1600
 			for i in range (0,8):
 					_omni()
-					ex += 20*20
-			b = 0
-			ex = -70*20
+					ex += 400
+			ex = -1400
 
 func _counters():
 	if vcounter < 40:
