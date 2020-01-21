@@ -8,6 +8,8 @@ var bool_morte = false
 var arealock = true
 var vcounter = 0
 var ucounter = 0
+var speed = 9
+var SPEED_SLOW = 5
 
 func _physics_process(delta):
 	get_input()
@@ -22,28 +24,31 @@ func get_input():
 	############ MOVIMENTAÇÃO #############
 	
 	if Input.is_action_pressed('ui_right'):
-		pos.x += 230
+		pos.x = 1
 
 	if Input.is_action_pressed('ui_left'):
-		pos.x -= 230
+		pos.x = -1
 
 	if Input.is_action_pressed('ui_down'):
-		pos.y += 230
+		pos.y = 1
 
 	if Input.is_action_pressed('ui_up'):
-		pos.y -= 230
+		pos.y = -1
 
 	if Input.is_action_pressed('ui_shoot'):
 		_bullet_spawn()
 
 	if Input.is_action_pressed("ui_focus"):
-        $Sprite2.show()
-
+		$Sprite2.show()
+		position += pos.normalized()*SPEED_SLOW
+	else:
+		position += pos.normalized()*speed
+				
 	if Input.is_action_just_released("ui_focus"):
 		$Sprite2.hide()
-		
-	
-	
+
+
+
 
 func _bullet_spawn():
 	if tiroespera == true:
@@ -82,7 +87,7 @@ func _Morte():
 
 	
 func _ready():
-	pass 
+	pass
 
 
 
