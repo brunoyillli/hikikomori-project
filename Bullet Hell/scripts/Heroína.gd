@@ -13,7 +13,6 @@ var SPEED_SLOW = 5
 var dano = false
 func _physics_process(delta):
 	get_input()
-	pos = move_and_slide(pos)
 	_Morte()
 
 
@@ -57,10 +56,8 @@ func _bullet_spawn():
 			
 func _change_life():
 	if  dano == true:
-		if lifecount != 1:
+		if lifecount != 0:
 			get_node(str("/root/Node2D/spring", lifecount)).hide()
-		else:
-			get_node(str("/root/Node2D/spring")).hide()
 	dano = false
 	
 func _Morte():
@@ -72,16 +69,8 @@ func _Morte():
 		arealock = true
 
 		
-		
-
-	
 func _ready():
 	pass
-
-
-
-
-
 
 func _on_Area2D_body_entered(body):
 	if (body.get_name() == "Heroína" or body.get_name() == "bulets") == false:

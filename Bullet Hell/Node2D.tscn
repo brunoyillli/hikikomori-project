@@ -244,7 +244,7 @@ custom_constants/shadow_offset_y = 6
 custom_constants/shadow_as_outline = 0
 text = "JIGOKU"
 
-[node name="spring" type="Sprite" parent="."]
+[node name="spring1" type="Sprite" parent="."]
 position = Vector2( -178.306, 111.394 )
 scale = Vector2( 0.08, 0.08 )
 texture = ExtResource( 24 )
@@ -305,7 +305,6 @@ one_shot = true
 autostart = true
 
 [node name="TimerMorte" type="Timer" parent="."]
-wait_time = 1.66
 one_shot = true
 
 [node name="200px-YukariPCB" type="Sprite" parent="."]
