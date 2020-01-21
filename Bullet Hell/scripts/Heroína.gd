@@ -10,12 +10,11 @@ var vcounter = 0
 var ucounter = 0
 var speed = 9
 var SPEED_SLOW = 5
-
+var dano = false
 func _physics_process(delta):
 	get_input()
 	pos = move_and_slide(pos)
 	_Morte()
-	_Vidas()
 
 
 func get_input():
@@ -47,9 +46,6 @@ func get_input():
 	if Input.is_action_just_released("ui_focus"):
 		$Sprite2.hide()
 
-
-
-
 func _bullet_spawn():
 	if tiroespera == true:
 		var bullets1 = bullets.instance()
@@ -59,21 +55,14 @@ func _bullet_spawn():
 		tiroespera = false
 		$Timer.start()
 			
-func _Vidas():
+func _change_life():
+	if  dano == true:
+		if lifecount != 1:
+			get_node(str("/root/Node2D/spring", lifecount)).hide()
+		else:
+			get_node(str("/root/Node2D/spring")).hide()
+	dano = false
 	
-	if lifecount == 5:
-		get_node("/root/Node2D/spring6").hide()
-	if lifecount == 4:
-		get_node("/root/Node2D/spring5").hide()
-	if lifecount == 3:
-		get_node("/root/Node2D/spring4").hide()
-	if lifecount == 2:
-		get_node("/root/Node2D/spring3").hide()
-	if lifecount == 1:
-		get_node("/root/Node2D/spring2").hide()
-	if lifecount == 0:
-		get_node("/root/Node2D/spring").hide()
-
 func _Morte():
 	if bool_morte == true:
 		position = Vector2(-625,500)
@@ -102,10 +91,12 @@ func _on_Area2D_body_entered(body):
 			$AnimatedSprite.show()
 			$AnimatedSprite.set_frame(0)
 			$AnimatedSprite.play("exp")
-			lifecount -= 1
+			dano = true
+			if(lifecount >= 1):
+				_change_life()
+				lifecount -= 1
 			get_node("/root/Node2D/TimerMorte").start()
-
-
+	
 
 func _on_TimerMorte_timeout():
 	bool_morte = true
