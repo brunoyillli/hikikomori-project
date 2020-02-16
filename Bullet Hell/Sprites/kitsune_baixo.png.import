@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/200px-YukariPCB.png-b3a72406c5bd321701faf1b5809875c3.stex"
+path="res://.import/kitsune_baixo.png-1e5917c5d8aaaa190c8884bd5dc0be3d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/200px-YukariPCB.png"
-dest_files=[ "res://.import/200px-YukariPCB.png-b3a72406c5bd321701faf1b5809875c3.stex" ]
+source_file="res://Sprites/kitsune_baixo.png"
+dest_files=[ "res://.import/kitsune_baixo.png-1e5917c5d8aaaa190c8884bd5dc0be3d.stex" ]
 
 [params]
 
