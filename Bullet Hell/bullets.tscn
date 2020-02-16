@@ -23,11 +23,8 @@ position = Vector2( -0.263882, 0.0659714 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 2 )
 
-[node name="Area2D" type="Area2D" parent="bulets"]
-
 [node name="Timer" type="Timer" parent="bulets"]
 wait_time = 2.0
 one_shot = true
 autostart = true
-[connection signal="area_entered" from="bulets/Area2D" to="bulets" method="_on_Area2D_area_entered"]
 [connection signal="timeout" from="bulets/Timer" to="bulets" method="_on_Timer_timeout"]

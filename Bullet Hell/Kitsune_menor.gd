@@ -43,4 +43,5 @@ func destroy(obj):
 
 func _on_Kitsune_menor_body_entered(body):
 	if (body.get_name() == "bulets"):
+		body.queue_free()
 		queue_free()
