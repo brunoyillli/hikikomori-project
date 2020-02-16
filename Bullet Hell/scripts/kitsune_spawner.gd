@@ -16,4 +16,3 @@ func _process(delta):
 		kitsune.set_position(Vector2(rand_range(-1410, -830),-40))
 		get_parent().add_child(kitsune)
 	pass
-	
