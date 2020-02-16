@@ -13,7 +13,7 @@ func _process(delta):
 	else:
 		interval = rand_range(0.3,1)
 		var kitsune = pre_kitsune.instance()
-		kitsune.set_position(Vector2(rand_range(30, 610),-40))
-		get_owner().add_child(kitsune)
+		kitsune.set_position(Vector2(rand_range(-1410, -830),-40))
+		get_parent().add_child(kitsune)
 	pass
 	

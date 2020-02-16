@@ -3,6 +3,7 @@ extends Node2D
 onready var loadpath1 = load("res://movimento_inimigo_1.tscn")
 onready var loadpath2 = load("res://movimento_inimigo_2.tscn")
 onready var loadpath3 = load("res://ini3.tscn")
+onready var loadpath4 = load("res://kitsune_spawner.tscn")
 var chave1 = 0
 var score= 0
 var timer_ini1 = 0
@@ -23,6 +24,12 @@ func _physics_process(delta):
 	if OS.is_window_maximized():
 		$Camera_fulscreen.make_current()
 		
+	if chave1 == 5:
+		var loadpath_4 = loadpath4.instance()
+		add_child(loadpath_4)
+		#loadpath_4.position.x = -15000
+		#loadpath_4.position.y = 90
+
 	if chave1 == 200:
 		var loadpath_1 = loadpath1.instance()
 		add_child(loadpath_1)
