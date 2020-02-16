@@ -1,7 +1,7 @@
 extends Area2D
 
 var vel = 150
-export(int, "A", "B", "C") var tipo = 0
+export(int, "A", "B", "C") var tipo = 0 setget set_tipo
 var score = 0
 var atributos =[
 	{
@@ -20,14 +20,22 @@ var atributos =[
 
 
 func _ready():
-	var atributo = atributos[tipo]
-	get_node("Sprite").set_texture(atributo.texture)
-	score = atributo.score
-	
+
 	pass 
 
 func _physics_process(delta):
 	set_position(get_position() + Vector2(0,1) * vel * delta)
-
 	pass
+
+func _draw():
+	var atributo = atributos[tipo]
+	get_node("Sprite").set_texture(atributo.texture)
+	score = atributo.score
 	
+func set_tipo(val):
+	tipo = val
+	if is_inside_tree():
+		update()
+
+func destroy(obj):
+	queue_free()

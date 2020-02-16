@@ -34,7 +34,10 @@ func get_input():
 		pos.y = -1
 
 	if Input.is_action_pressed('ui_shoot'):
-		_bullet_spawn()
+		if Input.is_action_pressed("ui_focus"):
+			_bullet_spawn() #colocar tiro fodao
+		else:
+			_bullet_spawn()
 
 	if Input.is_action_pressed("ui_focus"):
 		$Sprite2.show()

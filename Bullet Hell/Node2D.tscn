@@ -106,7 +106,6 @@ scale = Vector2( 2.25021, 6.95465 )
 texture = ExtResource( 2 )
 
 [node name="Heroína" type="KinematicBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( -690.218, 482.14 )
 script = ExtResource( 3 )
 
@@ -124,7 +123,7 @@ shape = SubResource( 2 )
 [node name="StilllAnim" type="AnimatedSprite" parent="Heroína"]
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
-frame = 5
+frame = 1
 speed_scale = 1.5
 playing = true
 
