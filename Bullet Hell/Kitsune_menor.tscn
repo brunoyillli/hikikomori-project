@@ -14,3 +14,4 @@ texture = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( 7.30988, 20.2739, -16.9735, 19.5229, -21.73, 13.2643, -33.2459, 13.0139, -42.7589, 10.0098, -42.7589, -3.50877, -39.5045, -16.777, -38.0024, -27.2915, -18.7259, -29.7949, 7.05951, -31.7976, 12.0664, -32.5487, 26.5864, -24.788, 22.8312, -1.75636 )
+[connection signal="body_entered" from="." to="." method="_on_Kitsune_menor_body_entered"]
