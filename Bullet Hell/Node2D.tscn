@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://scripts/Node2D.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/bordas.png" type="Texture" id=2]
@@ -29,6 +29,7 @@
 [ext_resource path="res://Sprites/534a9be5c47a74aff8bc77d17f5c246d.jpg" type="Texture" id=27]
 [ext_resource path="res://Sprites/266bbcfb17996cf684f9eb4d834785b0.jpg" type="Texture" id=28]
 [ext_resource path="res://Sprites/Natsumi_Spirit_Form.png" type="Texture" id=29]
+[ext_resource path="res://Kitsune_menor.tscn" type="PackedScene" id=30]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -76,12 +77,12 @@ position = Vector2( -430.309, 252.602 )
 zoom = Vector2( 1.4, 1.3 )
 
 [node name="Camera_windowed" type="Camera2D" parent="."]
-position = Vector2( -429.866, 255.983 )
+position = Vector2( -435.007, 267.929 )
 current = true
 zoom = Vector2( 1.09, 1.3 )
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( -631.168, 629.966 )
+position = Vector2( -637.009, 626.169 )
 scale = Vector2( 3.90796, 0.303111 )
 texture = ExtResource( 2 )
 
@@ -101,11 +102,12 @@ scale = Vector2( 0.278532, 6.64237 )
 texture = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -77.5397, 271.184 )
+position = Vector2( -77.5397, 267.579 )
 scale = Vector2( 2.25021, 6.95465 )
 texture = ExtResource( 2 )
 
 [node name="Heroína" type="KinematicBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( -690.218, 482.14 )
 script = ExtResource( 3 )
 
@@ -123,7 +125,7 @@ shape = SubResource( 2 )
 [node name="StilllAnim" type="AnimatedSprite" parent="Heroína"]
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
-frame = 7
+frame = 5
 speed_scale = 1.5
 playing = true
 
@@ -275,6 +277,7 @@ scale = Vector2( 0.08, 0.08 )
 texture = ExtResource( 24 )
 
 [node name="japan" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( -129.886, 173.434 )
 scale = Vector2( 0.08, 0.08 )
 texture = ExtResource( 25 )
@@ -313,6 +316,7 @@ scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 26 )
 
 [node name="534a9be5c47a74aff8bc77d17f5c246d" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( -1555.73, 353.376 )
 scale = Vector2( 1.21993, 1.07331 )
 texture = ExtResource( 27 )
@@ -324,6 +328,9 @@ texture = ExtResource( 28 )
 [node name="Natsumi_Spirit_Form" type="Sprite" parent="534a9be5c47a74aff8bc77d17f5c246d/266bbcfb17996cf684f9eb4d834785b0"]
 position = Vector2( -1132.83, 1017.9 )
 texture = ExtResource( 29 )
+
+[node name="Kitsune_menor" parent="." instance=ExtResource( 30 )]
+position = Vector2( -1159.38, 23.8026 )
 [connection signal="body_entered" from="Heroína/Area2D" to="Heroína" method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="Heroína/Timer" to="Heroína" method="_on_Timer_timeout"]
 [connection signal="timeout" from="TimerInimigo" to="." method="_on_TimerInimigo_timeout"]
