@@ -30,19 +30,19 @@ func _physics_process(delta):
 		#loadpath_4.position.x = -15000
 		#loadpath_4.position.y = 90
 
-	if chave1 == 200:
+	if chave1 == -200:
 		var loadpath_1 = loadpath1.instance()
 		add_child(loadpath_1)
 		loadpath_1.position.x = 1150
 		loadpath_1.position.y = 90
 		
-	if chave1 == 1600:
+	if chave1 == -1600:
 		var loadpath_2 = loadpath2.instance()
 		add_child(loadpath_2)
 		loadpath_2.position.x = -120
 		loadpath_2.position.y = -250
 		
-	if chave1 == 3000:
+	if chave1 == -3000:
 		var loadpath_3 = loadpath3.instance()
 		
 

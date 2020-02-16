@@ -13,9 +13,3 @@ func _ready():
 func _on_Timer_timeout():
 	queue_free()
 	
-func _on_Area2D_area_entered(area):
-	if area.has_method("destroy"):
-		area.destroy(self)
-
-func destroy():
-	queue_free()

@@ -2,6 +2,7 @@ extends Area2D
 
 var vel = 150
 export(int, "A", "B", "C") var tipo = 0 setget set_tipo
+
 var score = 0
 var atributos =[
 	{
@@ -24,7 +25,7 @@ func _ready():
 	pass 
 
 func _physics_process(delta):
-	set_position(get_position() + Vector2(0,1) * vel * delta)
+	set_position(get_position() + Vector2(2,1) * vel * delta)
 	pass
 
 func _draw():

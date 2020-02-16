@@ -1,5 +1,6 @@
 extends Node
 onready var pre_kitsune = preload("res://Kitsune_menor.tscn")
+onready var shot = preload("res://kitsune_shot.tscn")
 var interval =2
 func _ready():
 	set_process(true)
@@ -15,4 +16,10 @@ func _process(delta):
 		var kitsune = pre_kitsune.instance()
 		kitsune.set_position(Vector2(rand_range(-1410, -830),-40))
 		get_parent().add_child(kitsune)
+		_moviment(kitsune)
+
 	pass
+func _moviment(kitsune):
+		var shot_kitsune = shot.instance()
+		shot_kitsune.set_position(kitsune.get_position())
+		get_parent().add_child(shot_kitsune)
