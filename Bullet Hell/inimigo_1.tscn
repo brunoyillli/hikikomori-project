@@ -1,25 +1,32 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/inimigo.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/inimigo1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/ggs/a.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/ggs/b.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/ggs/c.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/ggs/d.png" type="Texture" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 29.4179
 height = 22.5341
 
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="Node2D" type="Node2D"]
 
 [node name="inimigo" type="KinematicBody2D" parent="."]
+scale = Vector2( 1, 1.15 )
 script = ExtResource( 1 )
 
 [node name="Timer" type="Timer" parent="inimigo"]
 wait_time = 0.14
 autostart = true
-
-[node name="Sprite" type="Sprite" parent="inimigo"]
-position = Vector2( 1.49999, -9.75003 )
-scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="inimigo"]
 
@@ -27,6 +34,10 @@ texture = ExtResource( 2 )
 position = Vector2( 3.05176e-005, -15.2057 )
 shape = SubResource( 1 )
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="inimigo"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="inimigo"]
+scale = Vector2( 1.1, 1.1 )
+frames = SubResource( 2 )
+frame = 3
+playing = true
 [connection signal="timeout" from="inimigo/Timer" to="inimigo" method="_on_Timer_timeout"]
 [connection signal="body_entered" from="inimigo/Area2D" to="inimigo" method="_on_Area2D_body_entered"]

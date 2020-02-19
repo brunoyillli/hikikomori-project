@@ -91,8 +91,8 @@ scale = Vector2( 0.201, 6.68015 )
 texture = ExtResource( 2 )
 
 [node name="Sprite4" type="Sprite" parent="."]
-position = Vector2( -430.767, -119.316 )
-scale = Vector2( 6.09367, 0.291666 )
+position = Vector2( -430.767, -123.715 )
+scale = Vector2( 6.09367, 0.373122 )
 texture = ExtResource( 2 )
 
 [node name="Sprite5" type="Sprite" parent="."]
@@ -123,7 +123,7 @@ shape = SubResource( 2 )
 [node name="StilllAnim" type="AnimatedSprite" parent="Heroína"]
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
-frame = 7
+frame = 4
 speed_scale = 1.5
 playing = true
 
@@ -314,7 +314,7 @@ scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 26 )
 
 [node name="534a9be5c47a74aff8bc77d17f5c246d" type="Sprite" parent="."]
-editor/display_folded = true
+visible = false
 position = Vector2( -1555.73, 353.376 )
 scale = Vector2( 1.21993, 1.07331 )
 texture = ExtResource( 27 )
