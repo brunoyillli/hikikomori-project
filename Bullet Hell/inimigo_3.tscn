@@ -1,22 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://ini3.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/ggs/a.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/ggs/b.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/ggs/c.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/ggs/d.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/inimigo1.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 29.4179
 height = 22.5341
-
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
 
 [node name="Node2D" type="Node2D"]
 
@@ -24,14 +13,14 @@ animations = [ {
 position = Vector2( 504.756, 208.652 )
 script = ExtResource( 1 )
 
+[node name="Sprite" type="Sprite" parent="ini3"]
+position = Vector2( 1.49999, -9.75003 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 2 )
+
 [node name="Area2D" type="Area2D" parent="ini3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ini3/Area2D"]
 position = Vector2( 3.05176e-005, -15.2057 )
 shape = SubResource( 1 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="ini3"]
-position = Vector2( -504.756, -208.652 )
-frames = SubResource( 2 )
-playing = true
 [connection signal="body_entered" from="ini3/Area2D" to="ini3" method="_on_Area2D_body_entered"]
