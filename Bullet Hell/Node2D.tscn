@@ -1,25 +1,8 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scripts/Node2D.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/bordas.png" type="Texture" id=2]
-[ext_resource path="res://scripts/Heroína.gd" type="Script" id=3]
-[ext_resource path="res://Sprites/explosion1.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/explosion2.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/explosion3.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/explosion4.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/explosion5.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/explosion6.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/exploison7.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/Sem ss.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/main1.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/main2.png" type="Texture" id=13]
-[ext_resource path="res://Sprites/main3.png" type="Texture" id=14]
-[ext_resource path="res://Sprites/main4.png" type="Texture" id=15]
-[ext_resource path="res://Sprites/main5.png" type="Texture" id=16]
-[ext_resource path="res://Sprites/main6.png" type="Texture" id=17]
-[ext_resource path="res://Sprites/main7.png" type="Texture" id=18]
-[ext_resource path="res://Sprites/main8.png" type="Texture" id=19]
-[ext_resource path="res://Sprites/hitbox.png" type="Texture" id=20]
+[ext_resource path="res://Heroína.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Fontes/Komika-Display/Komika_display_kaps_bold.ttf" type="DynamicFontData" id=21]
 [ext_resource path="res://Label.gd" type="Script" id=22]
 [ext_resource path="res://Fontes/Komika-Display/Komika_display.ttf" type="DynamicFontData" id=23]
@@ -30,39 +13,20 @@
 [ext_resource path="res://Sprites/266bbcfb17996cf684f9eb4d834785b0.jpg" type="Texture" id=28]
 [ext_resource path="res://Sprites/Natsumi_Spirit_Form.png" type="Texture" id=29]
 
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
-"loop": false,
-"name": "exp",
-"speed": 5.0
-} ]
-
-[sub_resource type="CircleShape2D" id=2]
-radius = 8.0984
-
-[sub_resource type="SpriteFrames" id=3]
-animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=1]
 size = 42
 font_data = ExtResource( 21 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=2]
 size = 42
 extra_spacing_char = 1
 font_data = ExtResource( 21 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=3]
 size = 30
 font_data = ExtResource( 21 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=4]
 size = 60
 extra_spacing_char = 8
 font_data = ExtResource( 23 )
@@ -105,37 +69,7 @@ position = Vector2( -77.5397, 267.579 )
 scale = Vector2( 2.25021, 6.95465 )
 texture = ExtResource( 2 )
 
-[node name="Heroína" type="KinematicBody2D" parent="."]
-position = Vector2( -690.218, 482.14 )
-script = ExtResource( 3 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Heroína"]
-visible = false
-frames = SubResource( 1 )
-animation = "exp"
-speed_scale = 3.0
-
-[node name="Area2D" type="Area2D" parent="Heroína"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Heroína/Area2D"]
-shape = SubResource( 2 )
-
-[node name="StilllAnim" type="AnimatedSprite" parent="Heroína"]
-scale = Vector2( 2, 2 )
-frames = SubResource( 3 )
-frame = 4
-speed_scale = 1.5
-playing = true
-
-[node name="Sprite2" type="Sprite" parent="Heroína"]
-visible = false
-position = Vector2( 0.00195313, 0.0742188 )
-scale = Vector2( 0.04, 0.04 )
-texture = ExtResource( 20 )
-
-[node name="Timer" type="Timer" parent="Heroína"]
-wait_time = 0.15
-one_shot = true
+[node name="Heroína" parent="." instance=ExtResource( 3 )]
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
@@ -144,7 +78,7 @@ margin_left = -125.793
 margin_top = 18.2013
 margin_right = 182.207
 margin_bottom = 75.2013
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.862745, 0.105882, 0.211765, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 4
@@ -157,7 +91,7 @@ margin_left = -144.0
 margin_top = -38.0
 margin_right = 108.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.862745, 0.105882, 0.211765, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 4
@@ -170,7 +104,7 @@ margin_left = -187.841
 margin_top = 200.226
 margin_right = -98.8407
 margin_bottom = 257.226
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.862745, 0.105882, 0.211765, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 4
@@ -181,7 +115,7 @@ margin_left = -291.087
 margin_top = -26.5657
 margin_right = -165.087
 margin_bottom = 10.4343
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Hi Score:"
 
@@ -190,7 +124,7 @@ margin_left = -291.087
 margin_top = 29.4343
 margin_right = -141.087
 margin_bottom = 66.4343
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Pontuação:"
 
@@ -199,7 +133,7 @@ margin_left = -291.087
 margin_top = 85.4343
 margin_right = -211.087
 margin_bottom = 122.434
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Vidas:"
 
@@ -208,7 +142,7 @@ margin_left = -291.087
 margin_top = 154.434
 margin_right = -180.087
 margin_bottom = 191.434
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Bombas:"
 
@@ -217,7 +151,7 @@ margin_left = -291.087
 margin_top = 210.434
 margin_right = -206.087
 margin_bottom = 247.434
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Força:"
 
@@ -226,7 +160,7 @@ margin_left = -291.087
 margin_top = 266.434
 margin_right = -150.087
 margin_bottom = 303.434
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Santidade:"
 
@@ -235,7 +169,7 @@ margin_left = -235.271
 margin_top = -120.152
 margin_right = 18.7292
 margin_bottom = -48.1517
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.878431, 0, 0.360784, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 5
@@ -275,7 +209,6 @@ scale = Vector2( 0.08, 0.08 )
 texture = ExtResource( 24 )
 
 [node name="japan" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( -129.886, 173.434 )
 scale = Vector2( 0.08, 0.08 )
 texture = ExtResource( 25 )
@@ -314,7 +247,6 @@ scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 26 )
 
 [node name="534a9be5c47a74aff8bc77d17f5c246d" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( -1555.73, 353.376 )
 scale = Vector2( 1.21993, 1.07331 )
 texture = ExtResource( 27 )
@@ -326,7 +258,4 @@ texture = ExtResource( 28 )
 [node name="Natsumi_Spirit_Form" type="Sprite" parent="534a9be5c47a74aff8bc77d17f5c246d/266bbcfb17996cf684f9eb4d834785b0"]
 position = Vector2( -1132.83, 1017.9 )
 texture = ExtResource( 29 )
-[connection signal="body_entered" from="Heroína/Area2D" to="Heroína" method="_on_Area2D_body_entered"]
-[connection signal="timeout" from="Heroína/Timer" to="Heroína" method="_on_Timer_timeout"]
 [connection signal="timeout" from="TimerInimigo" to="." method="_on_TimerInimigo_timeout"]
-[connection signal="timeout" from="TimerMorte" to="Heroína" method="_on_TimerMorte_timeout"]
